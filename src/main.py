@@ -23,7 +23,7 @@ def execute_roll_a_dice() -> list:
         sublist contains the results of rolls of a dice.
     """
 
-    dice_rolls = [roll_a_dice() for _ in range(5)]
+    dice_rolls = [roll_a_dice() for _ in range(6)]
     return dice_rolls
 
 
@@ -42,8 +42,10 @@ def format_results() -> list:
 
 
 def find_matches() -> str:
-    """Docs"""
-    with open("diceware_list.txt", "r", encoding="utf=8") as f:
+    """This function looks for matches between the results 
+        of format_results() and the lines of 'diceware.txt'"""
+    
+    with open("list/eff_large_wordlist.txt", "r", encoding="utf=8") as f:
         lines = f.readlines()
 
     results = format_results()
@@ -54,10 +56,10 @@ def find_matches() -> str:
             if result in line:
                 matches.append(line.split()[1])
 
-    return matches
+    # return matches
 
-    # string = " ".join(str(x) for x in matches)
-    # return string
+    string = " ".join(str(x) for x in matches)
+    return string
 
 
 passphrase = find_matches()
