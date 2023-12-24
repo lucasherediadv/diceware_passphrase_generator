@@ -44,7 +44,7 @@ def format_results() -> list:
 def find_matches() -> str:
     """This function looks for matches between the results 
         of format_results() and the lines of 'diceware.txt'"""
-    
+
     with open("list/eff_large_wordlist.txt", "r", encoding="utf=8") as f:
         lines = f.readlines()
 
@@ -62,5 +62,5 @@ def find_matches() -> str:
     return string
 
 
-passphrase = find_matches()
-print(passphrase)
+PASSPHRASE = find_matches()
+print(PASSPHRASE)
