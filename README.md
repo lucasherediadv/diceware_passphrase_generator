@@ -15,3 +15,20 @@ The workflow of this program is based in the directions given by the [EFF](https
 4. Write down the word.
 
 5. Repeat steps 1-4 five more times to come up with a total of six words.
+
+## Git Installation
+
+```
+# Clone the repository
+$ git clone https://github.com/lucasherediadv/diceware_passphrase_generator
+
+# Change the working directory
+$ cd diceware_passphrase_generator/
+```
+
+## Usage
+
+```
+diceware_passphrase_generator/src $ python main.py
+```
+
