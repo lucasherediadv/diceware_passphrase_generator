@@ -4,7 +4,7 @@ import random
 
 def roll_a_dice(number_of_rolls: int = 5) -> list:
     """Generates a list of random dice rolls.
-    
+
     Args:
         number_of_rolls (int): Number of times to roll the dice.
 
@@ -17,9 +17,9 @@ def roll_a_dice(number_of_rolls: int = 5) -> list:
 
 def execute_roll_a_dice() -> list:
     """Executes multiple rolls of the dice
-    
+
     Returns:
-        list: A list of lists, where each 
+        list: A list of lists, where each
         sublist contains the results of rolls of a dice.
     """
 
@@ -30,9 +30,9 @@ def execute_roll_a_dice() -> list:
 def format_results() -> list:
     """Generates a list of strings representing
     the results of multiple dice rolls.
-    
+
     Returns:
-        list: A list of strings, where each string 
+        list: A list of strings, where each string
         represents the concatenated results of each dice roll
     """
 
@@ -42,8 +42,8 @@ def format_results() -> list:
 
 
 def find_matches() -> str:
-    """This function looks for matches between the results 
-        of format_results() and the lines of 'diceware.txt'"""
+    """This function looks for matches between the results
+    of format_results() and the lines of 'diceware.txt'"""
 
     with open("list/eff_large_wordlist.txt", "r", encoding="utf=8") as f:
         lines = f.readlines()

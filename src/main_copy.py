@@ -1,4 +1,4 @@
-"""Used to generate a random integer in range [a, b]."""
+"""Program Docs"""
 from random import randint
 
 
@@ -16,27 +16,27 @@ def roll_a_dice() -> list:
 
 def execute_roll_a_dice() -> list[str]:
     """Rolls the dice 6 times and returns the results as
-        a list of strings.
-        
-        Returns:
-            A list of 6 strings, each string representing
-            the result of a dice roll.
+    a list of strings.
+
+    Returns:
+        A list of 6 strings, each string representing
+        the result of a dice roll.
     """
 
     # results = [roll_a_dice() for _ in range(6)]
     results = list(map(lambda x: roll_a_dice(), range(6)))
     # results = [''.join(map(str, result)) for result in results]
-    results = list(map(lambda x: ''.join(map(str, x)), results))
+    results = list(map(lambda x: "".join(map(str, x)), results))
     return results
 
 
 def find_matches() -> str:
     """Returns a space-separated string of words from
-        'list/eff_large_wordlist.txt' that contain any of
-        the results of 'execute_roll_a_dice()'.
+    'list/eff_large_wordlist.txt' that contain any of
+    the results of 'execute_roll_a_dice()'.
     """
 
-    with open('list/eff_large_wordlist.txt', 'r', encoding='utf=8') as f:
+    with open("list/eff_large_wordlist.txt", "r", encoding="utf=8") as f:
         lines = f.readlines()
 
     results = execute_roll_a_dice()
@@ -47,11 +47,15 @@ def find_matches() -> str:
     #         if result in line:
     #             matches.append(line.split()[1])
 
-    matches = list(map(lambda x: x.split()[1],
-                       filter(lambda x: any(result in x for result in results), lines)))
+    matches = list(
+        map(
+            lambda x: x.split()[1],
+            filter(lambda x: any(result in x for result in results), lines),
+        )
+    )
 
-    return ' '.join(map(str, matches))
+    return " ".join(map(str, matches))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(find_matches())
