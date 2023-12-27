@@ -1,66 +1,54 @@
-"""Docstring"""
-import random
+"""Program Docs"""
+from random import randint
 
 
-def roll_a_dice(number_of_rolls: int = 5) -> list:
-    """Generates a list of random dice rolls.
-
-    Args:
-        number_of_rolls (int): Number of times to roll the dice.
+def roll_a_dice() -> list:
+    """Generates a list of random numbers between 1 and 6
+    simulating the roll of a dice.
 
     Returns:
-        list: List of dice roll results.
+        list: list of random numbers.
     """
+    return [randint(1, 6) for _ in range(5)]
 
-    return [random.randint(1, 6) for _ in range(number_of_rolls)]
 
-
-def execute_roll_a_dice() -> list:
-    """Executes multiple rolls of the dice
+def execute_roll_a_dice() -> list[str]:
+    """Rolls the dice 6 times and returns the results as
+    a list of strings.
 
     Returns:
-        list: A list of lists, where each
-        sublist contains the results of rolls of a dice.
+        A list of 6 strings, each of which is a concatenation
+        of the digits obtained from rolling a dice.
     """
-
-    dice_rolls = [roll_a_dice() for _ in range(6)]
-    return dice_rolls
-
-
-def format_results() -> list:
-    """Generates a list of strings representing
-    the results of multiple dice rolls.
-
-    Returns:
-        list: A list of strings, where each string
-        represents the concatenated results of each dice roll
-    """
-
-    results = execute_roll_a_dice()
-    results = ["".join(map(str, result)) for result in results]
-    return results
+    return ["".join(map(str, roll_a_dice())) for _ in range(6)]
 
 
 def find_matches() -> str:
-    """This function looks for matches between the results
-    of format_results() and the lines of 'diceware.txt'"""
+    """Find matches between the words in eff_wordlist.txt and the
+    results of execute_roll_a_dice().
 
-    with open("list/eff_large_wordlist.txt", "r", encoding="utf=8") as f:
+    Returns:
+        A string containing the second word of each line in
+        eff_wordlist.txt that contains a match with any of the
+        results of execute_roll_a_dice().
+    """
+    with open("list/eff_wordlist.txt", "r", encoding="utf-8") as f:
         lines = f.readlines()
 
-    results = format_results()
+    results = execute_roll_a_dice()
 
+    # Iterate over each line in lines and each result in results,
+    # and append the second word of each line that contains
+    # a match with any of the results to matches.
     matches = []
     for line in lines:
         for result in results:
             if result in line:
                 matches.append(line.split()[1])
 
-    # return matches
-
-    string = " ".join(str(x) for x in matches)
-    return string
+    # Convert matches(list[str]) into a space-separated string.
+    return " ".join(map(str, matches))
 
 
-PASSPHRASE = find_matches()
-print(PASSPHRASE)
+if __name__ == "__main__":
+    print(find_matches())
