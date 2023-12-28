@@ -18,16 +18,4 @@ The workflow of this program is based in the directions given by the [EFF](https
 
 ## Git Installation
 
-```
-# Clone the repository
-$ git clone https://github.com/lucasherediadv/diceware_passphrase_generator
-
-# Change the working directory
-$ cd diceware_passphrase_generator/
-```
-
 ## Usage
-
-```
-diceware_passphrase_generator/src $ python main.py
-```
