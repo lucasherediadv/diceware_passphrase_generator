@@ -31,4 +31,3 @@ $ cd diceware_passphrase_generator/
 ```
 diceware_passphrase_generator/src $ python main.py
 ```
-
