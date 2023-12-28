@@ -2,10 +2,6 @@
 from random import randint
 
 
-with open("list/eff_wordlist.txt", "r", encoding="utf-8") as f:
-    WORDLIST = f.readlines()
-
-
 def roll_a_dice() -> list:
     """Generates a list of random numbers between 1 and 6
     simulating the roll of a dice.
@@ -36,10 +32,13 @@ def find_matches() -> str:
         eff_wordlist.txt that contains a match with any of the
         results of execute_roll_a_dice().
     """
+    with open("list/eff_wordlist.txt", "r", encoding="utf-8") as f:
+        lines = f.readlines()
+
     results = execute_roll_a_dice()
 
     matches = []
-    for line in WORDLIST:
+    for line in lines:
         split_line = line.split()
         if split_line[0] in results:
             matches.append(split_line[1])
