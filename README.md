@@ -4,7 +4,7 @@ A simple passphrase generator that uses the diceware method...
 
 This program simulate the roll of five dices, six times, to use the results for pick the words from a wordlist. The wordlist used is the provided by the [Electronic Frontier Foundation](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) designed for memorability and passphrase strength.
 
-The workflow of this program is based in the directions given by the [EFF](https://www.eff.org/dice):
+The workflow of this program is based on the directions given by the Electronic Frontier Foundation [here](https://www.eff.org/dice):
 
 1. Roll five dice all at once.
 
