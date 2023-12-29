@@ -1,3 +1,4 @@
+# TODO: Add Program Docs
 """Program Docs"""
 from random import randint
 
@@ -19,6 +20,7 @@ with open('list/eff_wordlist.txt', 'r', encoding='utf-8') as file:
 
 
 def roll_a_dice() -> list[int]:
+    # TODO: Update docs
     """Generates a list of random numbers between 1 and 6
     simulating the roll of five dices all at once and 
     storing the results in a list.
@@ -30,6 +32,7 @@ def roll_a_dice() -> list[int]:
 
 
 def execute_roll_a_dice() -> list[str]:
+    # TODO: Update docs
     """Rolls the dice 6 times and returns the results as
     a list of strings.
 
@@ -49,6 +52,7 @@ def execute_roll_a_dice() -> list[str]:
 
 
 def find_matches() -> str:
+    # TODO: Update docs
     """Finds matches between 'WORD_LIST' and the results of dice rolls.
     
     - Checks if the value in the index [0] of each list in 
