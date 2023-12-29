@@ -2,6 +2,9 @@
 # TODO: Add unittest
 # TODO: Add Program Docs
 # TODO: Learn more about type hinting
+# TODO: main(): https://realpython.com/python-main-function/
+# TODO: Add error handling: https://eli.thegreenplace.net/2008/08/21/robust-exception-handling/
+# https://stackoverflow.com/questions/839636/best-practices-for-python-exceptions
 
 """Program Docs"""
 from random import randint
@@ -15,11 +18,26 @@ DICE_ROLLS = 5
 # Defines the number of times 'roll_a_dice()' will be executed.
 EXECUTIONS = 6
 
-with open('list/eff_wordlist.txt', 'r', encoding='utf-8') as file:
-    # For each line in the file, split the line into a list of strings.
-    # The result is a list of lists, where each inner list represents
-    # a line in the file.
-    WORD_LIST = [line.split() for line in file]
+# Path to the word list.
+WORD_LIST_FILE = 'list/eff_large_wordlist.txt'
+
+
+def load_word_list(file_path: str) -> list[list[str]]:
+    """Load the word list from a file.
+    
+    For each line in the file, split the line into a list of strings.
+    The result is a list of lists, where each inner list represents
+    a line in the file.
+    """
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return [line.split() for line in file]
+    except FileNotFoundError:
+        print(f'File {file_path} not found.')
+        return []
+    except IOError as e:
+        print(f'An error ocurred while reading the file: {e}')
+        return []
 
 
 def roll_a_dice() -> list[int]:
@@ -58,7 +76,9 @@ def execute_roll_a_dice() -> list[str]:
     return results
 
 
-def find_matches() -> str:
+def find_matches(
+        word_list: list[list[str]],
+        all_results: list[str]) -> str:
     """Finds matches between elements in 'WORD_LIST' and the results 
     of 'execute_roll_a_dice()'.
     
@@ -72,16 +92,26 @@ def find_matches() -> str:
         str: A string of matches found between 'WORD_LIST' and
         'all_results', separated by spaces.
     """
-    all_results = execute_roll_a_dice()
-
     matches = []
 
-    for split_line in WORD_LIST:
+    for split_line in word_list:
         if split_line[0] in all_results:
             matches.append(split_line[1])
 
     return ' '.join(matches)
 
 
+def main() -> None:
+    """Main function to tie all the steps together"""
+    word_list = load_word_list(WORD_LIST_FILE)
+    if not word_list:
+        print("Exiting due to error.")
+        return
+
+    all_results = execute_roll_a_dice()
+
+    print(find_matches(word_list, all_results))
+
+
 if __name__ == '__main__':
-    print(find_matches())
+    main()
