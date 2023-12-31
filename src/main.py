@@ -1,3 +1,4 @@
+# TODO: #!
 # TODO: Add unittest
 # TODO: Add Program Docs
 # TODO: Learn more about type hinting
@@ -26,15 +27,8 @@ def load_word_list(file_path: str) -> list[list[str]]:
     The result is a list of lists, where each inner list represents
     a line in the file.
     """
-    try:
-        with open(file_path, 'r', encoding='utf-8') as file:
-            return [line.split() for line in file]
-    except FileNotFoundError:
-        print(f'File {file_path} not found.')
-        return []
-    except IOError as e:
-        print(f'An error ocurred while reading the file: {e}')
-        return []
+    with open(file_path, 'r', encoding='utf-8') as file:
+        return [line.split() for line in file]
 
 
 def roll_a_dice() -> list[int]:
@@ -101,9 +95,6 @@ def find_matches(
 def main() -> None:
     """Main function to tie all the steps together"""
     word_list = load_word_list(WORD_LIST_FILE)
-    if not word_list:
-        print("Exiting due to error.")
-        return
 
     all_results = execute_roll_a_dice()
 
