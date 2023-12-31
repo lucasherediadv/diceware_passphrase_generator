@@ -17,17 +17,17 @@ DICE_ROLLS = 5
 EXECUTIONS = 6
 
 # Path to the word list used to generate the passphrase.
-WORD_LIST_FILE = 'list/eff_large_wordlist.txt'
+WORD_LIST_FILE = "list/eff_large_wordlist.txt"
 
 
 def load_word_list(file_path: str) -> list[list[str]]:
     """Load the word list from a file.
-    
+
     For each line in the file, split the line into a list of strings.
     The result is a list of lists, where each inner list represents
     a line in the file.
     """
-    with open(file_path, 'r', encoding='utf-8') as file:
+    with open(file_path, "r", encoding="utf-8") as file:
         return [line.split() for line in file]
 
 
@@ -35,7 +35,7 @@ def roll_a_dice() -> list[int]:
     """Simulates the roll of five dice, each producing a random number
     between 1 and 6.
 
-    Generates a list of five integers, each representing the result of 
+    Generates a list of five integers, each representing the result of
     a dice roll. Each roll is independent and the results are stored in
     the list in the order they were rolled.
 
@@ -61,18 +61,18 @@ def execute_roll_a_dice() -> list[str]:
 
     for _ in range(EXECUTIONS):
         roll_result = roll_a_dice()
-        str_result = ''.join(map(str, roll_result))
+        str_result = "".join(map(str, roll_result))
         results.append(str_result)
 
     return results
 
 
 def find_matches(
-        word_list: list[list[str]],
-        all_results: list[str]) -> str:
-    """Finds matches between elements in 'WORD_LIST' and the results 
+    word_list: list[list[str]], all_results: list[str]
+) -> str:
+    """Finds matches between elements in 'WORD_LIST' and the results
     of 'execute_roll_a_dice()'.
-    
+
     - Checks if the first element (index[0]) of each sublist in
     'WORD_LIST' is present in the results of 'execute_roll_a_dice()'.
     - If True, apppends the second element (index[1]) of the sublist
@@ -89,7 +89,7 @@ def find_matches(
         if split_line[0] in all_results:
             matches.append(split_line[1])
 
-    return ' '.join(matches)
+    return " ".join(matches)
 
 
 def main() -> None:
@@ -101,5 +101,5 @@ def main() -> None:
     print(find_matches(word_list, all_results))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
