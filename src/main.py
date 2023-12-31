@@ -94,7 +94,17 @@ def find_matches(
 
 
 def main() -> None:
-    """Main function to tie all the steps together"""
+    """Main function to tie all the steps together.
+
+    This function performs three main steps:
+    - Loads a list of words from a file.
+    - Execute a dice roll simulation.
+    - Finds and prints matches between the word list and the dice roll
+    results.
+
+    Returns:
+        None.
+    """
     word_list = load_word_list(WORD_LIST_FILE)
 
     all_results = execute_roll_a_dice()
