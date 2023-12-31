@@ -1,4 +1,4 @@
-"""Unit test for the main program 'main.py'"""
+"""Basic Unit test for the main program 'main.py'"""
 import unittest
 from src.main import roll_a_dice, execute_roll_a_dice, find_matches
 

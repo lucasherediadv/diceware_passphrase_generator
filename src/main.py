@@ -1,6 +1,5 @@
 # TODO: Add error handling
 # TODO: #!
-# TODO: Add unittest
 # TODO: Add Program Docs
 # TODO: Learn more about type hinting
 # TODO: main(): https://realpython.com/python-main-function/
