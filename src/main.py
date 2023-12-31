@@ -1,10 +1,7 @@
-# TODO: Learn more about .venv/ and requirements.txt or pyproject.toml.
 # TODO: Add unittest
 # TODO: Add Program Docs
 # TODO: Learn more about type hinting
 # TODO: main(): https://realpython.com/python-main-function/
-# TODO: Add error handling: https://eli.thegreenplace.net/2008/08/21/robust-exception-handling/
-# https://stackoverflow.com/questions/839636/best-practices-for-python-exceptions
 
 """Program Docs"""
 from random import randint
@@ -18,7 +15,7 @@ DICE_ROLLS = 5
 # Defines the number of times 'roll_a_dice()' will be executed.
 EXECUTIONS = 6
 
-# Path to the word list.
+# Path to the word list used to generate the passphrase.
 WORD_LIST_FILE = 'list/eff_large_wordlist.txt'
 
 
