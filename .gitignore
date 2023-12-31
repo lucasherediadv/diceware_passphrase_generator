@@ -1,2 +1,8 @@
+# Environment
 .venv/
+
+# Byte-compiled
 __pycache__/
+
+# Distribution / packaging
+*.egg-info/
