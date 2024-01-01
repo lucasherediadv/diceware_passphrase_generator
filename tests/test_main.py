@@ -59,9 +59,7 @@ class TestMain(unittest.TestCase):
         """
         result = execute_roll_a_dice()
         self.assertEqual(len(result), 6)
-        self.assertTrue(
-            all(isinstance(num_str, str) for num_str in result)
-        )
+        self.assertTrue(all(isinstance(num_str, str) for num_str in result))
 
     def test_find_matches(self) -> None:
         """Tests the 'find_matches()' function from the 'main' module.

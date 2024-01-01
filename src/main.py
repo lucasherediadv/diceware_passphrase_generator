@@ -1,11 +1,12 @@
-# TODO: Add error handling
-# TODO: #!
-# TODO: Add Program Docs
-# TODO: Learn more about type hinting
-# TODO: main(): https://realpython.com/python-main-function/
+"""This program generates a passphrase of six words using the diceware 
+method.
 
-"""Program Docs"""
-from random import randint
+It simulates rolling five dice, uses the results to select a word
+from a predefined list and repeat the process six times to generates
+a secure and memorable passphrase.
+"""
+
+from secrets import randbelow
 
 # Represent the number of dice to be rolled simultaneously.
 # It is set to 5, corresponding to the 5-digit representation of words
@@ -23,9 +24,16 @@ WORD_LIST_FILE = "src/wordlist/eff_large_wordlist.txt"
 def load_word_list(file_path: str) -> list[list[str]]:
     """Load the word list from a file.
 
-    For each line in the file, split the line into a list of strings.
-    The result is a list of lists, where each inner list represents
-    a line in the file.
+    Each line in the file is split into a list of strings. The results
+    is a list of lists, where each inner list represents a line in
+    the file.
+
+    Args:
+        file_path (str): The path to the file containing the word list.
+
+    Returns:
+        list[list[str]]: A list of lists representing the word list.
+        Each inner list is a list from the file, split into strings.
     """
     with open(file_path, "r", encoding="utf-8") as file:
         return [line.split() for line in file]
@@ -43,7 +51,7 @@ def roll_a_dice() -> list[int]:
         list[int]: A list of five integers,
         each between 1 and 6, inclusive
     """
-    return [randint(1, 6) for _ in range(DICE_ROLLS)]
+    return [randbelow(6) + 1 for _ in range(DICE_ROLLS)]
 
 
 def execute_roll_a_dice() -> list[str]:
@@ -67,9 +75,7 @@ def execute_roll_a_dice() -> list[str]:
     return results
 
 
-def find_matches(
-    word_list: list[list[str]], all_results: list[str]
-) -> str:
+def find_matches(word_list: list[list[str]], all_results: list[str]) -> str:
     """Finds matches between elements in 'WORD_LIST' and the results
     of 'execute_roll_a_dice()'.
 
