@@ -1,24 +1,40 @@
-"""Basic Unit test for the main program 'main.py'"""
+"""Unit tests for the 'main.py' program.
+
+This program contains a series of unit test designed to verify the
+correct functionality of the functions in 'main.py'
+Each test case is a method within the 'TestMain' class, which
+inherits from 'unittest.TestCase'.
+"""
+
 import unittest
 from src.main import roll_a_dice, execute_roll_a_dice, find_matches
 
 
 class TestMain(unittest.TestCase):
-    """This class contains unit test for the functions in the main
-    module.
+    """A class used to perform unit tests on the functions in the
+    'main' module.
 
-    The class intherits from the 'unittest.TestCase' class, which
-    provides the framework for creating and running tests.
+    Attributes:
+        None
 
-    The class contains three methods, each of which tests a specific
-    function in the 'main' module.
-
-    To run the tests, an instance of the 'TestMain' class is created
-    and the 'unittest.main()' function is called.
+    Methods:
+        test_roll_a_dice()
+        test_execute_roll_a_dice()
+        test_find_matches()
     """
 
-    def test_roll_a_dice(self):
-        """Test Case for the function 'roll_a_dice()'
+    def setUp(self) -> None:
+        """Set up testing enviroment."""
+        self.word_list = [
+            ["11111", "first"],
+            ["22222", "second"],
+            ["33333", "third"],
+        ]
+
+        self.all_results = ["11111", "22222", "44444", "55555", "66666"]
+
+    def test_roll_a_dice(self) -> None:
+        """Tests the 'roll_a_dice()' function from the 'main' module.
 
         This test checks if the function is working correctly by
         asserting two conditions:
@@ -30,8 +46,9 @@ class TestMain(unittest.TestCase):
         self.assertEqual(len(result), 5)
         self.assertTrue(all(1 <= num <= 6 for num in result))
 
-    def test_execute_roll_a_dice(self):
-        """Test Case for the function 'execute_roll_a_dice()'
+    def test_execute_roll_a_dice(self) -> None:
+        """Tests the 'execute_roll_a_dice()' function from the 'main'
+        module.
 
         This test checks if the function is working correctly by
         asserting two conditions:
@@ -46,8 +63,8 @@ class TestMain(unittest.TestCase):
             all(isinstance(num_str, str) for num_str in result)
         )
 
-    def test_find_matches(self):
-        """Test Case for the function 'execute_roll_a_dice()'
+    def test_find_matches(self) -> None:
+        """Tests the 'find_matches()' function from the 'main' module.
 
         This test checks if the function is working correctly by
         asserting the following conditions:
@@ -58,15 +75,17 @@ class TestMain(unittest.TestCase):
           contains a string of numbers and its corresponding word.
         - The results list contains strings of concatenated numbers.
         """
-        word_list = [
-            ["11111", "first"],
-            ["22222", "second"],
-            ["33333", "third"],
-        ]
-
-        all_results = ["11111", "22222", "44444", "55555", "66666"]
-        result = find_matches(word_list, all_results)
+        result = find_matches(self.word_list, self.all_results)
         self.assertEqual(result, "first second")
+
+    def test_find_matches_empty_list(self) -> None:
+        """Test 'find_matches() function with an empty list.
+
+        Checks if the function handles an empty list correctly by
+        asserting that it returns an empty string.
+        """
+        result = find_matches([], self.all_results)
+        self.assertEqual(result, "")
 
 
 if __name__ == "__main__":
