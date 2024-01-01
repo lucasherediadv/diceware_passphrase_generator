@@ -16,6 +16,20 @@ The workflow of this program is based on the directions given by the Electronic 
 
 5. Repeat steps 1-4 five more times to come up with a total of six words.
 
-## Git Installation
+## Installation
+
+```
+$ git clone https://github.com/lucasherediadv/diceware_passphrase_generator.git
+
+$ cd diceware_passphrase_generator/
+
+$ pip install .
+```
 
 ## Usage
+
+```
+$ diceware
+creamer eastbound expletive headcount slot widget
+
+```
