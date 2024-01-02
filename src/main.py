@@ -18,7 +18,7 @@ DICE_ROLLS = 5
 EXECUTIONS = 6
 
 # Path to the word list used to generate the passphrase.
-WORD_LIST_FILE = "src/wordlist/eff_large_wordlist.txt"
+WORD_LIST_FILE = "wordlist/eff_large_wordlist.txt"
 
 
 def load_word_list(file_path: str) -> list[list[str]]:
