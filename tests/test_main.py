@@ -1,3 +1,5 @@
+# TODO: Add test for load_wordlist()
+
 """Unit tests for the 'main.py' program.
 
 This program contains a series of unit test designed to verify the
