@@ -5,6 +5,7 @@ It simulates rolling five dice, uses the results to select a word
 from a predefined list and repeat the process six times to generates
 a secure and memorable passphrase."""
 
+import sys
 from secrets import randbelow
 
 DICE_ROLLS = 5
@@ -27,7 +28,7 @@ def load_word_list(file_path: str) -> list[list[str]]:
             return [line.split() for line in file]
     except IOError as e:
         print(f"Error opening file: {e}")
-        return []
+        sys.exit(1)
 
 
 def roll_five_dice() -> list[int]:
