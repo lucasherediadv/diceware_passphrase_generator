@@ -2,9 +2,9 @@
 
 A simple passphrase generator that uses the diceware method...
 
-This program simulate the roll of five dices, six times, to use the results for pick the words from a wordlist. The wordlist used is the provided by the [Electronic Frontier Foundation](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) designed for memorability and passphrase strength.
+This program uses the [Electronic Frontier Foundation](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) word list, designed for memorability and passphrase strength.
 
-The workflow of this program is based on the directions given by the Electronic Frontier Foundation [here](https://www.eff.org/dice):
+The workflow of this program is based on the directions given by [EFF](https://www.eff.org/dice):
 
 1. Roll five dice all at once.
 
@@ -33,3 +33,11 @@ $ diceware
 creamer eastbound expletive headcount slot widget
 
 ```
+
+## License
+
+Diceware Passphrase Generator its released under the MIT license.
+
+Diceware is a trademark of [Arnold Reinhold](https://theworld.com/~reinhold/).
+
+Copyright for the [EFF large list](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) by [Joseph Bonneau](https://www.eff.org/about/staff/joseph-bonneau) and [EFF](https://www.eff.org/)
