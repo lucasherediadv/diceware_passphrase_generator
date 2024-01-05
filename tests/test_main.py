@@ -7,7 +7,12 @@ inherits from 'unittest.TestCase'.
 """
 
 import unittest
-from src.main import roll_a_dice, execute_roll_a_dice, find_matches
+from src.main import (
+    roll_five_dice,
+    execute_multiple_dice_rolls,
+    find_matches,
+    convert_dice_roll_to_str,
+)
 
 
 class TestMain(unittest.TestCase):
@@ -16,13 +21,18 @@ class TestMain(unittest.TestCase):
     def test_roll_a_dice_returns_list_of_five_numbers_in_range(self) -> None:
         """Test if the function returns a list of 5 number between
         1 and 6."""
-        result = roll_a_dice()
+        result = roll_five_dice()
         self.assertEqual(len(result), 5)
         self.assertTrue(all(1 <= num <= 6 for num in result))
 
+    def test_convert_dice_roll_to_str(self) -> None:
+        """Test if the function convert a list of integers into a
+        string"""
+        self.assertEqual(convert_dice_roll_to_str([1, 2, 3, 4, 5]), "12345")
+
     def test_execute_roll_a_dice_returns_list_of_six_strings(self) -> None:
         """Test if the function returns a list of 6 strings."""
-        result = execute_roll_a_dice()
+        result = execute_multiple_dice_rolls()
         self.assertEqual(len(result), 6)
         for num_str in result:
             self.assertIsInstance(num_str, str)
