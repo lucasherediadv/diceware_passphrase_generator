@@ -41,7 +41,7 @@ def roll_five_dice() -> list[int]:
     return [randbelow(6) + 1 for _ in range(DICE_ROLLS)]
 
 
-def convert_dice_roll_to_str(dice_roll: list[int]) -> str:
+def convert_dice_rolls_to_str(dice_roll: list[int]) -> str:
     """Converts a list of integers into a string
 
     Args:
@@ -63,7 +63,7 @@ def execute_multiple_dice_rolls() -> list[str]:
         dice roll.
     """
     return [
-        convert_dice_roll_to_str(roll_five_dice()) for _ in range(EXECUTIONS)
+        convert_dice_rolls_to_str(roll_five_dice()) for _ in range(EXECUTIONS)
     ]
 
 

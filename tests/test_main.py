@@ -11,7 +11,7 @@ from src.main import (
     roll_five_dice,
     execute_multiple_dice_rolls,
     find_matches,
-    convert_dice_roll_to_str,
+    convert_dice_rolls_to_str,
 )
 
 
@@ -28,7 +28,7 @@ class TestMain(unittest.TestCase):
     def test_convert_dice_roll_to_str(self) -> None:
         """Test if the function convert a list of integers into a
         string"""
-        self.assertEqual(convert_dice_roll_to_str([1, 2, 3, 4, 5]), "12345")
+        self.assertEqual(convert_dice_rolls_to_str([1, 2, 3, 4, 5]), "12345")
 
     def test_execute_roll_a_dice_returns_list_of_six_strings(self) -> None:
         """Test if the function returns a list of 6 strings."""
