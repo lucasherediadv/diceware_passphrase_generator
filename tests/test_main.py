@@ -1,5 +1,3 @@
-# TODO: Add test for load_wordlist()
-
 """Unit tests for the 'main.py' program.
 
 This program contains a series of unit test designed to verify the
@@ -13,78 +11,42 @@ from src.main import roll_a_dice, execute_roll_a_dice, find_matches
 
 
 class TestMain(unittest.TestCase):
-    """A class used to perform unit tests on the functions in the
-    'main' module.
+    """Unit tests for the functions in the 'main' module."""
 
-    Attributes:
-        None
+    def test_roll_a_dice_returns_list_of_five_numbers_in_range(self) -> None:
+        """Test if the function returns a list of 5 number between
+        1 and 6."""
+        result = roll_a_dice()
+        self.assertEqual(len(result), 5)
+        self.assertTrue(all(1 <= num <= 6 for num in result))
 
-    Methods:
-        test_roll_a_dice()
-        test_execute_roll_a_dice()
-        test_find_matches()
-    """
+    def test_execute_roll_a_dice_returns_list_of_six_strings(self) -> None:
+        """Test if the function returns a list of 6 strings."""
+        result = execute_roll_a_dice()
+        self.assertEqual(len(result), 6)
+        for num_str in result:
+            self.assertIsInstance(num_str, str)
 
-    def setUp(self) -> None:
-        """Set up testing enviroment."""
-        self.word_list = [
+    def test_find_matches_returns_matching_words(self) -> None:
+        """Test if the function returns matching words from the word
+        list"""
+        word_list = [
             ["11111", "first"],
             ["22222", "second"],
             ["33333", "third"],
         ]
 
-        self.all_results = ["11111", "22222", "44444", "55555", "66666"]
+        all_results = ["11111", "22222", "44444", "55555", "66666"]
 
-    def test_roll_a_dice(self) -> None:
-        """Tests the 'roll_a_dice()' function from the 'main' module.
-
-        This test checks if the function is working correctly by
-        asserting two conditions:
-
-        - The lenght of the result list should be 5.
-        - All number in the result list should be between 1 and 6.
-        """
-        result = roll_a_dice()
-        self.assertEqual(len(result), 5)
-        self.assertTrue(all(1 <= num <= 6 for num in result))
-
-    def test_execute_roll_a_dice(self) -> None:
-        """Tests the 'execute_roll_a_dice()' function from the 'main'
-        module.
-
-        This test checks if the function is working correctly by
-        asserting two conditions:
-
-        - The lenght of the result list should be 6.
-        - All elements in the result list should be instances of the
-        'str' class.
-        """
-        result = execute_roll_a_dice()
-        self.assertEqual(len(result), 6)
-        self.assertTrue(all(isinstance(num_str, str) for num_str in result))
-
-    def test_find_matches(self) -> None:
-        """Tests the 'find_matches()' function from the 'main' module.
-
-        This test checks if the function is working correctly by
-        asserting the following conditions:
-
-        - Given a word list and a list of results, the function should
-          return a string of words that match the results.
-        - The word list is a list of lists where each inner list
-          contains a string of numbers and its corresponding word.
-        - The results list contains strings of concatenated numbers.
-        """
-        result = find_matches(self.word_list, self.all_results)
+        result = find_matches(word_list, all_results)
         self.assertEqual(result, "first second")
 
-    def test_find_matches_empty_list(self) -> None:
-        """Test 'find_matches() function with an empty list.
+    def test_find_matches_handles_empty_list(self) -> None:
+        """Test if the function returns an empty string for an
+        emtpy word list."""
+        all_results = ["11111", "22222", "44444", "55555", "66666"]
 
-        Checks if the function handles an empty list correctly by
-        asserting that it returns an empty string.
-        """
-        result = find_matches([], self.all_results)
+        result = find_matches([], all_results)
         self.assertEqual(result, "")
 
 
