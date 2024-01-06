@@ -16,7 +16,7 @@ Follow these steps to use the program:
 
 1. **Clone the respository** to your local machine:
 
-```
+```sh
 # Clone the repo
 $ git clone https://github.com/lucasherediadv/diceware_passphrase_generator.git
 
@@ -26,13 +26,13 @@ $ cd diceware_passphrase_generator
 
 2. **Install the program** using pip:
 
-```
+```sh
 $ pip install .
 ```
 
-3. **Run the program** from the command line using the diceware command:
+3. **Run the program** from the command line using the `diceware` command:
 
-```
+```sh
 $ diceware
 # The output should be a six-letter passphrase.
 creamer eastbound expletive headcount slot widget
@@ -40,7 +40,7 @@ creamer eastbound expletive headcount slot widget
 
 ## Word list
 
-The word list used by this program is the [Electronic Frontier Foundation](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) word list by [Joseph Bonneau](https://www.eff.org/about/staff/joseph-bonneau). This list was designed for memorability and passphrase strength.  
+The word list used by this program is the [Electronic Frontier Foundation](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) word list by [Joseph Bonneau](https://www.eff.org/about/staff/joseph-bonneau). This list was designed for memorability and passphrase strength.
 
 For more information about the list used see [here](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases).
 
@@ -50,4 +50,4 @@ Diceware Passphrase Generator its released under the MIT license.
 
 Diceware is a trademark of [Arnold Reinhold](https://theworld.com/~reinhold/).
 
-Copyright for the [EFF large list](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) by [Joseph Bonneau](https://www.eff.org/about/staff/joseph-bonneau) and [EFF](https://www.eff.org/)
+The Copyright for the [EFF large list](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) belongs to [Joseph Bonneau](https://www.eff.org/about/staff/joseph-bonneau) and [EFF](https://www.eff.org/).
