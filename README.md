@@ -50,4 +50,4 @@ Diceware Passphrase Generator its released under the MIT license.
 
 Diceware is a trademark of [Arnold Reinhold](https://theworld.com/~reinhold/).
 
-The copyright for the [EFF large list](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) belongs to [Joseph Bonneau](https://www.eff.org/about/staff/joseph-bonneau) and [EFF](https://www.eff.org/).
+Copyright for the [EFF large list](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) by [Joseph Bonneau](https://www.eff.org/about/staff/joseph-bonneau) and [EFF](https://www.eff.org/)
