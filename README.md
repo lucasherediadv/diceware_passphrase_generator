@@ -12,8 +12,6 @@ The Diceware method is a great way to generate strong and memorable passphrases 
 
 ## How to use the program
 
-Follow these steps to use the program:
-
 1. **Clone the respository** to your local machine:
 
 ```sh
@@ -30,7 +28,7 @@ $ cd diceware_passphrase_generator
 $ pip install .
 ```
 
-3. **Run the program** from the command line using the `diceware` command:
+3. **Run the program** using the `diceware` command:
 
 ```sh
 $ diceware
@@ -40,9 +38,9 @@ creamer eastbound expletive headcount slot widget
 
 ## Word list
 
-The word list used by this program is the [Electronic Frontier Foundation](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) word list by [Joseph Bonneau](https://www.eff.org/about/staff/joseph-bonneau). This list was designed for memorability and passphrase strength.
+The word list used is the [Electronic Frontier Foundation](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) word list by [Joseph Bonneau](https://www.eff.org/about/staff/joseph-bonneau). This list was designed for memorability and passphrase strength.
 
-For more information about the list used see [here](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases).
+For more information see [here](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases).
 
 ## License
 
