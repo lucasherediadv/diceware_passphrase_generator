@@ -13,7 +13,7 @@ EXECUTIONS = 6
 WORD_LIST_FILE = "wordlist/eff_large_wordlist.txt"
 
 
-def load_word_list(file_path: str) -> list[list[str]]:
+def load_word_list(file_path):
     """Load the word list from a file.
 
     Args:
@@ -31,7 +31,7 @@ def load_word_list(file_path: str) -> list[list[str]]:
         sys.exit(1)
 
 
-def roll_five_dice() -> list[int]:
+def roll_five_dice():
     """Simulates the roll of five dice, each producing a random number
     between 1 and 6.
 
@@ -42,7 +42,7 @@ def roll_five_dice() -> list[int]:
     return [randbelow(6) + 1 for _ in range(DICE_ROLLS)]
 
 
-def convert_dice_rolls_to_str(dice_roll: list[int]) -> str:
+def convert_dice_rolls_to_str(dice_roll):
     """Converts a list of integers into a string
 
     Args:
@@ -55,7 +55,7 @@ def convert_dice_rolls_to_str(dice_roll: list[int]) -> str:
     return "".join(map(str, dice_roll))
 
 
-def execute_multiple_dice_rolls() -> list[str]:
+def execute_multiple_dice_rolls():
     """Executes a dice roll multiple times and returns the results
     as strings.
 
@@ -68,7 +68,7 @@ def execute_multiple_dice_rolls() -> list[str]:
     ]
 
 
-def find_matches(word_list: list[list[str]], all_results: list[str]) -> str:
+def find_matches(word_list, all_results):
     """Finds matches between elements in 'WORD_LIST' and the results
     of 'execute_roll_a_dice()'.
 
@@ -85,7 +85,7 @@ def find_matches(word_list: list[list[str]], all_results: list[str]) -> str:
     return " ".join(matches)
 
 
-def main() -> None:
+def main():
     """Main function to tie all the steps together."""
     word_list = load_word_list(WORD_LIST_FILE)
 
