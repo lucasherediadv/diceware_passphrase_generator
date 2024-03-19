@@ -8,7 +8,7 @@ The Diceware method is a simple and effective way to generate strong and memorab
 
 ## Why use the diceware method?
 
-The Diceware method is a great way to generate strong and memorable passphrases because it relies on true randomness. Unlike passwords that are based on personal information or common words, Diceware passphrases are truly random and therefore much harder to crack.
+The Diceware method is a great way to generate passphrases because it relies on true randomness. Unlike passwords that are based on personal information or common words, Diceware passphrases are truly random and therefore much harder to crack.
 
 ## How to use the program
 
@@ -16,22 +16,22 @@ The Diceware method is a great way to generate strong and memorable passphrases 
 
 ```sh
 # Clone the repo
-$ git clone https://github.com/lucasherediadv/diceware_passphrase_generator.git
+git clone https://github.com/lucasherediadv/diceware_passphrase_generator.git
 
 # Change working directory
-$ cd diceware_passphrase_generator
+cd diceware_passphrase_generator
 ```
 
 2. **Install the program** using pip:
 
 ```sh
-$ pip install .
+pip install .
 ```
 
 3. **Run the program** using the `diceware` command:
 
 ```sh
-$ diceware
+diceware
 # The output should be a six-letter passphrase.
 creamer eastbound expletive headcount slot widget
 ```
