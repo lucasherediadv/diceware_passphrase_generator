@@ -10,7 +10,7 @@ The Diceware method is a simple and effective way to generate strong and memorab
 
 The Diceware method is a great way to generate passphrases because it relies on true randomness. Unlike passwords that are based on personal information or common words, Diceware passphrases are truly random and therefore much harder to crack.
 
-## How to use the program
+## How to use
 
 1. **Clone the respository** to your local machine:
 
