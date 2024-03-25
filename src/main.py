@@ -5,6 +5,8 @@ It simulates rolling five dice, uses the results to select a word
 from a predefined list and repeat the process six times to generates
 a secure and memorable passphrase."""
 
+# TODO: Unify some functionalities in one function
+
 import sys
 from secrets import randbelow
 
